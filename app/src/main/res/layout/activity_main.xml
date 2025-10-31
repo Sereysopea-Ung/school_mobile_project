@@ -1,81 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:clickable="false"
+        android:focusable="false">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/left_arrow" />
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:focusable="true"
+                android:src="@drawable/left_arrow"
+                tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="Sok Sao"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="8dp">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
             <TextView
-                android:layout_width="24dp"
-                android:layout_height="16dp"
-                android:background="#EC342C"
-                android:text="9+"
-                android:textAlignment="center"
-                android:textColor="#fff"
-                android:textSize="11dp" />
-        </androidx.cardview.widget.CardView>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/sok_sao"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/drop_down" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="16dp"
+                    android:background="#EC342C"
+                    android:gravity="center"
+                    android:text="@string/vsvsav"
+                    android:textColor="#fff"
+                    android:textSize="11sp"
+                    tools:ignore="TextSizeCheck,TextContrastCheck" />
+            </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/edit_icon" />
+            <ImageView
+                android:id="@+id/dropDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/todoererere"
+                android:focusable="true"
+                android:src="@drawable/drop_down"
+                tools:ignore="TouchTargetSizeCheck" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/search" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
+            <ImageView
+                android:id="@+id/editIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/edit_icon"
+                tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/search"
+                tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -90,7 +118,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/cover_angkor" />
+                        android:src="@drawable/cover_angkor"
+                        tools:ignore="ContentDescription" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -100,9 +129,13 @@
                         android:layout_margin="10dp">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/changeCover"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            app:cardCornerRadius="15dp">
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="15dp"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -113,25 +146,23 @@
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/camera" />
+                                    android:src="@drawable/camera"
+                                    tools:ignore="ContentDescription" />
                             </LinearLayout>
-
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
-
-
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="16dp">
+                    android:layout_marginStart="16dp">
 
                     <androidx.cardview.widget.CardView
+                        android:elevation="1dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:elevation="1dp"
                         app:cardCornerRadius="50dp">
 
                         <LinearLayout
@@ -148,24 +179,27 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/avatar" />
+                                    android:src="@drawable/avatar"
+                                    tools:ignore="ContentDescription" />
                             </androidx.cardview.widget.CardView>
                         </LinearLayout>
-
                     </androidx.cardview.widget.CardView>
 
                     <LinearLayout
+                        android:elevation="2dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_margin="0dp"
-                        android:elevation="2dp">
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/changeAvatar"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            app:cardCornerRadius="15dp">
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardCornerRadius="15dp"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -176,48 +210,46 @@
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/camera" />
+                                    android:src="@drawable/camera"
+                                    tools:ignore="ContentDescription" />
                             </LinearLayout>
-
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
                 </RelativeLayout>
-
             </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Sok Sao"
+                android:text="@string/vasvsav"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp">
+                android:layout_marginStart="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3.2k"
+                    android:text="@string/vsdavsa"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="friends" />
+                    android:text="@string/savasdvsadvd" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:text="Love travelling"
-                android:textFontWeight="@integer/material_motion_duration_medium_1"
+                android:layout_marginStart="16dp"
+                android:text="@string/love_travelling"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -232,16 +264,20 @@
                     android:layout_weight="10">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/addStory"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardCornerRadius="5dp">
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="5dp"
+                        tools:ignore="TouchTargetSizeCheck">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="#0F57F9"
                             android:gravity="center"
-                            android:text="+ Add story"
+                            android:text="@string/add_story"
                             android:textColor="#fff" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
@@ -257,9 +293,13 @@
                     android:layout_weight="11">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/editProfile"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardCornerRadius="5dp">
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="5dp"
+                        tools:ignore="TouchTargetSizeCheck">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -270,14 +310,15 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="8dp"
-                                android:src="@drawable/edit_icon" />
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/edit_icon"
+                                tools:ignore="ContentDescription" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="Edit profile"
+                                android:text="@string/edit_profile"
                                 android:textColor="#000" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -296,103 +337,42 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardCornerRadius="5dp">
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardCornerRadius="5dp"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="#B3B7C2"
-                            android:src="@drawable/ellipsis" />
+                            android:src="@drawable/ellipsis"
+                            tools:ignore="ContentDescription" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
             </LinearLayout>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="24dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/career_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:text="Student at " />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Royal University of Phnom Penh"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/heart" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:text="Single" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ellipsis" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:text="See your About info" />
-            </LinearLayout>
-
             <androidx.cardview.widget.CardView
-                android:layout_marginVertical="16dp"
-                app:cardCornerRadius="5dp"
-                android:layout_marginHorizontal="16dp"
+                android:id="@+id/editPublicDetails"
                 android:layout_width="match_parent"
-                android:layout_height="36dp">
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="5dp"
+                tools:ignore="TouchTargetSizeCheck">
+
                 <TextView
-                    android:textAlignment="center"
-                    android:gravity="center"
-                    android:background="#E1E5F1"
-                    android:textColor="#598EFC"
-                    android:text="Edit public details"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:background="#E1E5F1"
+                    android:gravity="center"
+                    android:text="@string/edit_public_details"
+                    android:textAlignment="center"
+                    android:textColor="#598EFC"
+                    tools:ignore="TextContrastCheck" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
-
-
-
     </ScrollView>
-
-
 </LinearLayout>

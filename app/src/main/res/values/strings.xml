@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">facebook_profile</string>
+    <string name="todo">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="werwer">TODO</string>
+    <string name="todo3erere">TODO3er</string>
+    <string name="todoererere">TODO</string>
+    <string name="sok_sao">Sok Sao</string>
+    <string name="todovdavasd">TODO</string>
+    <string name="vsvsav">9+</string>
+    <string name="vasvsav">Sok Sao</string>
+    <string name="vsdavsa">3.2k</string>
+    <string name="savasdvsadvd">friends</string>
+    <string name="love_travelling">Love travelling</string>
+    <string name="add_story">+ Add story</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="single">Single</string>
+    <string name="see_your_about_info">See your About info</string>
+    <string name="student_at">Student at</string>
+    <string name="royal_university_of_phnom_penh">Royal University of Phnom Penh</string>
+    <string name="edit_public_details">Edit public details</string>
 </resources>
